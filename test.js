@@ -18,16 +18,16 @@ const uport = new uportConnect.Connect(appName, {
     signer: uportConnect.SimpleSigner(signingKey)
 });
 
-// Request credentials
-uport.requestCredentials({
-  requested: ['name'],
-}).then((credentials) => {
-  console.log(credentials);
+try{
+	// Request credentials
+	uport.requestCredentials({
+	  requested: ['name'],
+	}).then((credentials) => {
+	  console.log(credentials);
 
-  console.log('finished')
+	  console.log('finished')
 
-})
-
-
-
-
+	})
+} catch (e) {
+	console.log(e)
+}
